@@ -4,11 +4,8 @@ import CustomButton from "../custom-button/custom-button.component";
 
 import {
   auth,
-  AuthOptions,
-  createUserPofileDocument,
   createUserProfileDocument,
 } from "../../firebase/firebase.utils.js";
-import React from "react";
 
 import "./sign-up.styles.scss";
 

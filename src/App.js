@@ -5,7 +5,7 @@ import "./App.css";
 
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
-import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
+import SignInAndSignUpPage from "./components/sign-in-and-sign-up/sign-in-and-sign-up.component.jsx";
 import Header from "./components/header/header.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
@@ -27,14 +27,15 @@ class App extends React.Component {
 
         userRef.onSnapshot((snapShot) => {
           this.setState({
-            curentUser: {
+            currentUser: {
               id: snapShot.id,
               ...snapShot.data(),
             },
           });
+          console.log(this.state);
         });
       } else {
-        this.setState({ curentUser: userAuth });
+        this.setState({ currentUser: userAuth });
       }
     });
   }

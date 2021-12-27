@@ -14,18 +14,16 @@ const config = {
 
 firebase.initializeApp(config);
 
-// Take authentication and store in database
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
 
   const snapShot = await userRef.get();
-  // Check if data exists, if not create a new user using the data from our userAuth object
+
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
-
     try {
       await userRef.set({
         displayName,
@@ -38,7 +36,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     }
   }
 
-  // return userRef in case we want to use it in our code for something
   return userRef;
 };
 

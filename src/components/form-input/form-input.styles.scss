@@ -1,8 +1,6 @@
-// Sass Variables
 $sub-color: grey;
 $main-color: black;
 
-// Easy way to include this whole block wherever we @include shrinkLabel w parens
 @mixin shrinkLabel {
   top: -14px;
   font-size: 12px;
@@ -35,7 +33,7 @@ $main-color: black;
     }
   }
 
-  input[type="password"] {
+  input[type='password'] {
     letter-spacing: 0.3em;
   }
 
